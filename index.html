@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paul | Portfolio</title>
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,6 +20,9 @@
       }
     }
   </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -48,27 +52,29 @@
     <!-- HERO -->
     <section id="accueil" class="hero-bg grid lg:grid-cols-[1.1fr_1fr] items-center gap-12 px-6 lg:px-12 py-20">
       <div>
-        <span class="fade-in-up inline-block px-4 py-1.5 mb-6 text-sm text-gray-400 border border-dark-border rounded-full">● Disponible pour de nouvelles opportunités</span>
+        <span class="fade-in-up inline-block px-4 py-1.5 mb-6 text-sm text-gray-400 border border-dark-border rounded-full">
+          <i class="fa-solid fa-circle text-[8px] text-green-400 align-middle mr-1"></i> Disponible pour de nouvelles opportunités
+        </span>
         <h1 class="fade-in-up delay-1 text-4xl md:text-6xl font-bold leading-tight mb-5">
           Je construis des<br><span class="text-gold">expériences web</span> modernes
         </h1>
         <p class="fade-in-up delay-2 text-gray-400 max-w-lg mb-8">Développeur Web Junior Front-End & Design Web. Je crée des interfaces rapides, responsives et agréables à utiliser.</p>
         <div class="fade-in-up delay-3 flex flex-wrap gap-4 mb-10">
-          <a href="#contact" class="btn-gold px-6 py-3">Me contacter ↗</a>
-          <a href="#projets" class="btn-outline px-6 py-3">Voir mes projets</a>
+          <a href="#contact" class="btn-gold px-6 py-3"><i class="fa-solid fa-paper-plane mr-2"></i>Me contacter</a>
+          <a href="#projets" class="btn-outline px-6 py-3"><i class="fa-solid fa-folder-open mr-2"></i>Voir mes projets</a>
         </div>
         <div class="fade-in-up delay-4 flex items-center gap-3 text-sm text-gray-400">
           <span>Suivez-moi</span>
-          <a href="https://github.com/ulrichkone124-dotcom" target="_blank" class="social-btn">GH</a>
-          <a href="#" class="social-btn">in</a>
-          <a href="mailto:ulrichkone124@gmail.com" class="social-btn">@</a>
+          <a href="https://github.com/ulrichkone124-dotcom" target="_blank" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:ulrichkone124@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
 
       <div class="relative grid place-items-center fade-in-up delay-2">
         <div class="float w-72 h-72 md:w-96 md:h-96 rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow">
           <!-- Remplace par : <img src="photo.jpg" alt="Paul" class="w-full h-full object-cover"> -->
-          <span>Photo</span>
+          <i class="fa-solid fa-user text-7xl text-gold/40"></i>
         </div>
         <div class="stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 bg-dark-card border border-dark-border rounded-xl px-6 py-4 text-center">
           <div class="flex flex-col"><strong class="text-gold text-xl">1+</strong><small class="text-gray-400 text-xs">Année d'études</small></div>
@@ -85,26 +91,17 @@
         <h2 class="text-3xl font-bold leading-snug mb-4">Des solutions<br>avec du code et <span class="text-gold">de la créativité</span></h2>
         <p class="text-gray-400 mb-6">Étudiant en Licence 3 Application Development, je me passionne pour le développement web et mobile. J'aime transformer une idée en produit concret, propre et maintenable.</p>
         <ul class="text-gray-400 space-y-2 mb-8">
-          <li><span class="text-gold">✦</span> Résolution de problèmes</li>
-          <li><span class="text-gold">✦</span> Code propre et maintenable</li>
-          <li><span class="text-gold">✦</span> Attention à la performance et à l'UX</li>
+          <li><i class="fa-solid fa-star text-gold mr-2 text-xs"></i>Résolution de problèmes</li>
+          <li><i class="fa-solid fa-star text-gold mr-2 text-xs"></i>Code propre et maintenable</li>
+          <li><i class="fa-solid fa-star text-gold mr-2 text-xs"></i>Attention à la performance et à l'UX</li>
         </ul>
-        <a href="#" class="btn-outline px-6 py-3">Télécharger mon CV</a>
+        <a href="#" class="btn-outline px-6 py-3"><i class="fa-solid fa-download mr-2"></i>Télécharger mon CV</a>
       </div>
 
       <div id="competences" class="card bg-dark-card border border-dark-border rounded-2xl p-8">
-        <span class="section-tag mb-6">02 · COMPÉTENCES</span>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="skill-card"><span class="skill-icon" style="color:#ff7a4d">H5</span>HTML5</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#3fa9f5">C3</span>CSS3</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#f5d742">JS</span>JavaScript</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#3178c6">TS</span>TypeScript</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#61dafb">⚛</span>React</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#38bdf8">TW</span>Tailwind</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#f05033">G</span>Git</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#a97bff">K</span>Kotlin</div>
-          <div class="skill-card"><span class="skill-icon" style="color:#f24e1e">Fg</span>Figma</div>
-        </div>
+        <span class="section-tag">02 · COMPÉTENCES</span>
+        <h2 class="text-2xl font-bold mb-6">Mon <span class="text-gold">niveau</span> par technologie</h2>
+        <div id="skills-list" class="grid sm:grid-cols-2 gap-x-6 gap-y-5"></div>
       </div>
     </section>
 
@@ -113,25 +110,25 @@
       <span class="section-tag">03 · SERVICES</span>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="card bg-dark-card border border-dark-border rounded-2xl p-6">
-          <div class="icon-box">&lt;/&gt;</div>
+          <div class="icon-box"><i class="fa-solid fa-code"></i></div>
           <h3 class="font-semibold mb-2">Développement Web</h3>
           <p class="text-gray-400 text-sm mb-4">Sites responsives, performants et modernes.</p>
           <a href="#" class="text-gold text-sm">En savoir plus →</a>
         </div>
         <div class="card bg-dark-card border border-dark-border rounded-2xl p-6">
-          <div class="icon-box">◎</div>
+          <div class="icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
           <h3 class="font-semibold mb-2">Design UI/UX</h3>
           <p class="text-gray-400 text-sm mb-4">Interfaces intuitives et agréables à utiliser.</p>
           <a href="#" class="text-gold text-sm">En savoir plus →</a>
         </div>
         <div class="card bg-dark-card border border-dark-border rounded-2xl p-6">
-          <div class="icon-box">▣</div>
+          <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
           <h3 class="font-semibold mb-2">Applications Mobiles</h3>
           <p class="text-gray-400 text-sm mb-4">Applications Android natives avec Kotlin.</p>
           <a href="#" class="text-gold text-sm">En savoir plus →</a>
         </div>
         <div class="card bg-dark-card border border-dark-border rounded-2xl p-6">
-          <div class="icon-box">◷</div>
+          <div class="icon-box"><i class="fa-solid fa-gauge-high"></i></div>
           <h3 class="font-semibold mb-2">Optimisation</h3>
           <p class="text-gray-400 text-sm mb-4">Amélioration de la vitesse et du référencement.</p>
           <a href="#" class="text-gold text-sm">En savoir plus →</a>
@@ -141,39 +138,16 @@
 
     <!-- PROJETS -->
     <section id="projets" class="reveal px-6 lg:px-12 py-8">
-      <div class="flex justify-between items-center mb-6">
-        <span class="text-xs tracking-wider text-gold">04 · PROJETS</span>
-        <a href="#" class="text-gold text-sm">Voir tous les projets →</a>
+      <div class="flex flex-wrap justify-between items-end gap-4 mb-6">
+        <div>
+          <span class="section-tag">04 · PROJETS</span>
+          <h2 class="text-3xl font-bold">Mes <span class="text-gold">réalisations</span></h2>
+        </div>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="card bg-dark-card border border-dark-border rounded-2xl overflow-hidden">
-          <div class="h-44 grid place-items-center bg-gradient-to-br from-dark-soft to-[#0f0f12] text-gray-400 text-sm border-b border-dark-border">Projet à venir</div>
-          <div class="p-5">
-            <span class="text-xs text-gold">HTML · CSS · JS</span>
-            <h3 class="font-semibold text-lg my-1">Projet 01</h3>
-            <p class="text-gray-400 text-sm">Description du projet à ajouter.</p>
-          </div>
-        </article>
-        <article class="card bg-dark-card border border-dark-border rounded-2xl overflow-hidden">
-          <div class="h-44 grid place-items-center bg-gradient-to-br from-dark-soft to-[#0f0f12] text-gray-400 text-sm border-b border-dark-border">Projet à venir</div>
-          <div class="p-5">
-            <span class="text-xs text-gold">React · Tailwind</span>
-            <h3 class="font-semibold text-lg my-1">Projet 02</h3>
-            <p class="text-gray-400 text-sm">Description du projet à ajouter.</p>
-          </div>
-        </article>
-        <article class="card bg-dark-card border border-dark-border rounded-2xl overflow-hidden">
-          <div class="h-44 grid place-items-center bg-gradient-to-br from-dark-soft to-[#0f0f12] text-gray-400 text-sm border-b border-dark-border">Projet à venir</div>
-          <div class="p-5">
-            <span class="text-xs text-gold">Kotlin · Android</span>
-            <h3 class="font-semibold text-lg my-1">Projet 03</h3>
-            <p class="text-gray-400 text-sm">Description du projet à ajouter.</p>
-          </div>
-        </article>
-      </div>
+      <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- AFFICHES DE COMMERCE (NOUVEAU) -->
+    <!-- AFFICHES DE COMMERCE -->
     <section id="affiches" class="reveal px-6 lg:px-12 py-8">
       <div class="flex flex-wrap justify-between items-end gap-4 mb-6">
         <div>
@@ -182,8 +156,8 @@
           <p class="text-gray-400 text-sm mt-2">Clique sur une affiche pour la voir en grand.</p>
         </div>
         <div class="flex gap-3">
-          <button id="prev-btn" aria-label="Précédent" class="arrow-btn">←</button>
-          <button id="next-btn" aria-label="Suivant" class="arrow-btn">→</button>
+          <button id="prev-btn" aria-label="Précédent" class="arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <button id="next-btn" aria-label="Suivant" class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
       </div>
 
@@ -239,7 +213,6 @@
 
       </div>
 
-      <!-- Indicateurs (points) -->
       <div id="dots" class="flex justify-center gap-2 mt-4"></div>
     </section>
 
@@ -248,16 +221,19 @@
       <span class="section-tag">06 · EXPÉRIENCE & FORMATION</span>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-6 border-t border-dark-border">
         <div class="timeline-item relative pt-4">
+          <i class="fa-solid fa-graduation-cap text-gold mb-2"></i>
           <h3 class="font-semibold mb-1">Licence 3 Développeur d'Applications</h3>
           <span class="text-gold text-sm">2025 – Aujourd'hui</span>
           <p class="text-gray-400 text-sm mt-2">Mobile, réseaux, développement web et DevOps.</p>
         </div>
         <div class="timeline-item relative pt-4">
+          <i class="fa-solid fa-laptop-code text-gold mb-2"></i>
           <h3 class="font-semibold mb-1">Formation en développement web</h3>
           <span class="text-gold text-sm">2024 – 2025</span>
           <p class="text-gray-400 text-sm mt-2">HTML, CSS, JavaScript, PHP et bases de données.</p>
         </div>
         <div class="timeline-item relative pt-4">
+          <i class="fa-solid fa-book-open text-gold mb-2"></i>
           <h3 class="font-semibold mb-1">Autodidacte</h3>
           <span class="text-gold text-sm">En continu</span>
           <p class="text-gray-400 text-sm mt-2">Apprentissage des frameworks et des API.</p>
@@ -280,20 +256,20 @@
         </div>
         <input type="text" placeholder="Sujet" class="field">
         <textarea rows="4" placeholder="Votre message" required class="field resize-y"></textarea>
-        <button type="submit" class="btn-gold self-start px-6 py-3">Envoyer le message ➤</button>
+        <button type="submit" class="btn-gold self-start px-6 py-3"><i class="fa-solid fa-paper-plane mr-2"></i>Envoyer le message</button>
       </form>
 
       <div class="bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-6">
         <div class="flex gap-4 items-start">
-          <span class="info-icon">✉</span>
+          <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
           <div><small class="text-gray-400 text-xs">Email</small><p class="text-sm">ulrichkone124@gmail.com</p></div>
         </div>
         <div class="flex gap-4 items-start">
-          <span class="info-icon">☎</span>
+          <span class="info-icon"><i class="fa-brands fa-whatsapp"></i></span>
           <div><small class="text-gray-400 text-xs">WhatsApp</small><p class="text-sm">0761005948</p></div>
         </div>
         <div class="flex gap-4 items-start">
-          <span class="info-icon">⌂</span>
+          <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
           <div><small class="text-gray-400 text-xs">Localisation</small><p class="text-sm">Côte d'Ivoire</p></div>
         </div>
       </div>
@@ -303,18 +279,18 @@
 
   <footer class="flex justify-between px-6 lg:px-12 py-6 mt-8 border-t border-dark-border text-gray-400 text-sm">
     <span>© 2026 Paul. Tous droits réservés.</span>
-    <a href="#accueil" class="text-gold">Retour en haut ↑</a>
+    <a href="#accueil" class="text-gold">Retour en haut <i class="fa-solid fa-arrow-up ml-1"></i></a>
   </footer>
 
-  <!-- LIGHTBOX : affichage en grand -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4" aria-hidden="true">
-    <button id="lb-close" aria-label="Fermer" class="absolute top-5 right-5 text-3xl text-white hover:text-gold transition">✕</button>
-    <button id="lb-prev" aria-label="Précédente" class="arrow-btn absolute left-4 top-1/2 -translate-y-1/2">←</button>
+    <button id="lb-close" aria-label="Fermer" class="absolute top-5 right-5 text-3xl text-white hover:text-gold transition"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lb-prev" aria-label="Précédente" class="arrow-btn absolute left-4 top-1/2 -translate-y-1/2"><i class="fa-solid fa-chevron-left"></i></button>
     <figure class="lb-content max-w-4xl max-h-[90vh] flex flex-col items-center">
       <img id="lb-img" src="" alt="" class="max-h-[80vh] w-auto rounded-xl shadow-2xl">
       <figcaption id="lb-caption" class="mt-4 text-gray-300 text-sm"></figcaption>
     </figure>
-    <button id="lb-next" aria-label="Suivante" class="arrow-btn absolute right-4 top-1/2 -translate-y-1/2">→</button>
+    <button id="lb-next" aria-label="Suivante" class="arrow-btn absolute right-4 top-1/2 -translate-y-1/2"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <script src="script.js"></script>
