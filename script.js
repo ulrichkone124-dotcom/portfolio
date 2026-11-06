@@ -117,8 +117,8 @@ function Reveal({ as: Tag = 'div', className = '', children, ...rest }) {
 function Navbar() {
   return h('header', { className: 'sticky top-0 z-50 flex items-center justify-between gap-6 px-6 lg:px-12 py-4 bg-dark/85 backdrop-blur-md border-b border-dark-border fade-in' },
     h('div', { className: 'flex items-center gap-2 font-bold tracking-wider' },
-      h('span', { className: 'w-9 h-9 grid place-items-center rounded-lg border-2 border-gold text-gold' }, 'P'),
-      h('span', null, 'PAUL', h('span', { className: 'text-gold' }, '.DEV'))
+      h('span', { className: 'w-9 h-9 grid place-items-center rounded-lg border-2 border-gold text-gold' }, 'U'),
+      h('span', null, 'ULRICH', h('span', { className: 'text-gold' }, '.DEV'))
     ),
     h('nav', { className: 'hidden md:flex gap-6 text-sm' },
       navLinks.map((link, i) =>
@@ -136,6 +136,9 @@ function Hero() {
       h('span', { className: 'fade-in-up inline-block px-4 py-1.5 mb-6 text-sm text-gray-400 border border-dark-border rounded-full' },
         h('i', { className: 'fa-solid fa-circle text-[8px] text-green-400 align-middle mr-1' }),
         'Disponible pour de nouvelles opportunités'
+      ),
+      h('p', { className: 'fade-in-up delay-1 text-gold font-semibold tracking-wide mb-2' },
+        'Je suis Ulrich Koné Gbah'
       ),
       h('h1', { className: 'fade-in-up delay-1 text-4xl md:text-6xl font-bold leading-tight mb-5' },
         'Je construis des', h('br'), h('span', { className: 'text-gold' }, 'expériences web'), ' modernes'
@@ -161,7 +164,7 @@ function Hero() {
       h('div', { className: 'float w-72 h-72 md:w-96 md:h-96 rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
         h('i', { className: 'fa-solid fa-user text-7xl text-gold/40' })
       ),
-      h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 bg-dark-card border border-dark-border rounded-xl px-6 py-4 text-center' },
+      h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 rounded-xl px-6 py-4 text-center' },
         h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '1+'), h('small', { className: 'text-gray-400 text-xs' }, "Année d'études")),
         h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '3+'), h('small', { className: 'text-gray-400 text-xs' }, 'Projets réalisés')),
         h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '100%'), h('small', { className: 'text-gray-400 text-xs' }, 'Motivé'))
@@ -472,7 +475,7 @@ function Contact() {
 // ===== FOOTER =====
 function Footer() {
   return h('footer', { className: 'flex justify-between px-6 lg:px-12 py-6 mt-8 border-t border-dark-border text-gray-400 text-sm' },
-    h('span', null, '© 2026 Paul. Tous droits réservés.'),
+    h('span', null, '© 2026 Ulrich Koné Gbah. Tous droits réservés.'),
     h('a', { href: '#accueil', className: 'text-gold' }, 'Retour en haut ', h('i', { className: 'fa-solid fa-arrow-up ml-1' }))
   );
 }

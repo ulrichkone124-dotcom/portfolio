@@ -78,6 +78,16 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 12px 30px rgba(245, 197, 66, .12);
 }
 
+/* ===== STATISTIQUES SOUS LA PHOTO (SEMI-TRANSPARENTES) ===== */
+.stats-box {
+  background: rgba(20, 20, 23, .55);
+  border: 1px solid rgba(245, 197, 66, .25);
+  border-radius: .75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 /* ===== ANIMATIONS D'ENTRÉE ===== */
 .fade-in-up { opacity: 0; transform: translateY(30px); animation: fadeInUp .8s ease forwards; }
 .delay-1 { animation-delay: .15s; }
