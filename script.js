@@ -16,16 +16,16 @@ const navLinks = [
 
 // level : pourcentage de 0 à 100
 const skills = [
-  { name: 'HTML5',      level: 90, icon: 'fa-brands fa-html5',        color: '#e34f26' },
-  { name: 'CSS3',       level: 85, icon: 'fa-brands fa-css3-alt',     color: '#1572b6' },
-  { name: 'JavaScript', level: 75, icon: 'fa-brands fa-js',           color: '#f7df1e' },
-  { name: 'TypeScript', level: 55, icon: 'fa-solid fa-code',          color: '#3178c6' },
-  { name: 'React',      level: 60, icon: 'fa-brands fa-react',        color: '#61dafb' },
-  { name: 'Tailwind',   level: 80, icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
-  { name: 'Git',        level: 70, icon: 'fa-brands fa-git-alt',      color: '#f05033' },
-  { name: 'Kotlin',     level: 60, icon: 'fa-brands fa-android',      color: '#a97bff' },
-  { name: 'PHP',        level: 65, icon: 'fa-brands fa-php',          color: '#777bb4' },
-  { name: 'Figma',      level: 65, icon: 'fa-brands fa-figma',        color: '#f24e1e' }
+  { name: 'HTML5',      level: 75, icon: 'fa-brands fa-html5',        color: '#e34f26' },
+  { name: 'CSS3',       level: 35, icon: 'fa-brands fa-css3-alt',     color: '#1572b6' },
+  { name: 'JavaScript', level: 25, icon: 'fa-brands fa-js',           color: '#f7df1e' },
+  { name: 'TypeScript', level: 5, icon: 'fa-solid fa-code',          color: '#3178c6' },
+  { name: 'React',      level: 15, icon: 'fa-brands fa-react',        color: '#61dafb' },
+  { name: 'Tailwind',   level: 20, icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
+  { name: 'Git',        level: 80, icon: 'fa-brands fa-git-alt',      color: '#f05033' },
+  { name: 'Kotlin',     level: 40, icon: 'fa-brands fa-android',      color: '#a97bff' },
+  { name: 'PHP',        level: 25, icon: 'fa-brands fa-php',          color: '#777bb4' },
+  { name: 'Figma',      level: 5, icon: 'fa-brands fa-figma',        color: '#f24e1e' }
 ];
 
 const services = [
@@ -39,13 +39,13 @@ const services = [
 // image : chemin d'une capture ('' pour afficher une icône)
 const projects = [
   {
-    title: 'Projet 01',
+    title: 'Portfolio Cédric',
     description: 'Description courte de ton projet : le problème résolu et ce que tu as réalisé.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    image: '',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind', 'React'],
+    image: 'capture-cedric.png',
     icon: 'fa-solid fa-laptop-code',
-    github: 'https://github.com/ulrichkone124-dotcom/',
-    demo: ''
+    github: 'https://github.com/ulrichkone124-dotcom/wognin-cedric',
+    demo: 'https://wognin-cedric.vercel.app/'
   },
   {
     title: 'Projet 02',
@@ -68,15 +68,15 @@ const projects = [
 ];
 
 const affiches = [
-  { src: 'affiches/affiche1.jpg', title: 'Affiche promotionnelle 01', desc: 'Promotion et mise en avant de produits.' },
-  { src: 'affiches/affiche2.jpg', title: 'Affiche promotionnelle 02', desc: "Campagne de soldes et d'offres spéciales." },
-  { src: 'affiches/affiche3.jpg', title: 'Affiche promotionnelle 03', desc: "Visuel pour l'ouverture d'une boutique." },
-  { src: 'affiches/affiche4.jpg', title: 'Affiche promotionnelle 04', desc: 'Affiche publicitaire pour un service local.' }
+  { src: 'LUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour ESLYAMEA' },
+  { src: 'CONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour BONTE" },
+  { src: 'NOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour l'entreprise NELLY" },
+  { src: 'MATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte' }
 ];
 
 const experiences = [
-  { icon: 'fa-solid fa-graduation-cap', title: "Licence 3 Développeur d'Applications", date: "2025 – Aujourd'hui", text: 'Mobile, réseaux, développement web et DevOps.' },
-  { icon: 'fa-solid fa-laptop-code', title: 'Formation en développement web', date: '2024 – 2025', text: 'HTML, CSS, JavaScript, PHP et bases de données.' },
+  { icon: 'fa-solid fa-graduation-cap', title: "Licence 3 Développeur d'Applications", date: "2026 – Aujourd'hui", text: 'Mobile, réseaux, développement web et DevOps.' },
+  { icon: 'fa-solid fa-laptop-code', title: 'Formation en développement web', date: "2023 – Aujourd'hui", text: 'HTML, CSS, JavaScript, PHP et bases de données.' },
   { icon: 'fa-solid fa-book-open', title: 'Autodidacte', date: 'En continu', text: 'Apprentissage des frameworks et des API.' }
 ];
 
@@ -138,7 +138,7 @@ function Hero() {
         'Disponible pour de nouvelles opportunités'
       ),
       h('p', { className: 'fade-in-up delay-1 text-gold font-semibold tracking-wide mb-2' },
-        'Je suis Ulrich Koné Gbah'
+        'Je suis Kone Gbah Ulrich Paul David'
       ),
       h('h1', { className: 'fade-in-up delay-1 text-4xl md:text-6xl font-bold leading-tight mb-5' },
         'Je construis des', h('br'), h('span', { className: 'text-gold' }, 'expériences web'), ' modernes'
@@ -156,17 +156,17 @@ function Hero() {
           h('i', { className: 'fa-brands fa-github' })),
         h('a', { href: '#', className: 'social-btn', 'aria-label': 'LinkedIn' },
           h('i', { className: 'fa-brands fa-linkedin-in' })),
-        h('a', { href: 'mailto:ulrichkone124@gmail.com', className: 'social-btn', 'aria-label': 'Email' },
+        h('a', { href: 'ulrichkone124@gmail.com', className: 'social-btn', 'aria-label': 'Email' },
           h('i', { className: 'fa-solid fa-envelope' }))
       )
     ),
     h('div', { className: 'relative grid place-items-center fade-in-up delay-2' },
       h('div', { className: 'float w-72 h-72 md:w-96 md:h-96 rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
-        h('i', { className: 'fa-solid fa-user text-7xl text-gold/40' })
+        h('img', { src: 'WhatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Kone Gbah Ulrich Paul David', className: 'w-full h-full object-cover' }),
       ),
       h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 rounded-xl px-6 py-4 text-center' },
-        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '1+'), h('small', { className: 'text-gray-400 text-xs' }, "Année d'études")),
-        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '3+'), h('small', { className: 'text-gray-400 text-xs' }, 'Projets réalisés')),
+        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '3+'), h('small', { className: 'text-gray-400 text-xs' }, "Année d'études")),
+        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '1+'), h('small', { className: 'text-gray-400 text-xs' }, 'Projets réalisés')),
         h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '100%'), h('small', { className: 'text-gray-400 text-xs' }, 'Motivé'))
       )
     )
@@ -188,7 +188,7 @@ function About() {
       h('li', null, h('i', { className: 'fa-solid fa-star text-gold mr-2 text-xs' }), 'Code propre et maintenable'),
       h('li', null, h('i', { className: 'fa-solid fa-star text-gold mr-2 text-xs' }), "Attention à la performance et à l'UX")
     ),
-    h('a', { href: '#', className: 'btn-outline px-6 py-3' }, h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
+    h('a', { href: 'CV_Kone_Gbah_Ulrich_Paul_David.pdf', className: 'btn-outline px-6 py-3' }, h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
   );
 }
 
@@ -462,11 +462,11 @@ function Contact() {
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-brands fa-whatsapp' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0761005948'))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0700615948'))
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-location-dot' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire"))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire, Abidjan-Anono & Yamoussoukro"))
       )
     )
   );
