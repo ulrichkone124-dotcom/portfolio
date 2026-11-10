@@ -156,7 +156,7 @@ function Hero() {
           h('i', { className: 'fa-brands fa-github' })),
         h('a', { href: '#', className: 'social-btn', 'aria-label': 'LinkedIn' },
           h('i', { className: 'fa-brands fa-linkedin-in' })),
-        h('a', { href: 'ulrichkone124@gmail.com', className: 'social-btn', 'aria-label': 'Email' },
+        h('a', { href: 'mailto:ulrichkone124@gmail.com', className: 'social-btn', 'aria-label': 'Email' },
           h('i', { className: 'fa-solid fa-envelope' }))
       )
     ),
