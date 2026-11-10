@@ -480,7 +480,7 @@ function Contact() {
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-location-dot' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire"))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire, Abidjan-Anono & Yamoussoukro"))
       )
     )
   );
