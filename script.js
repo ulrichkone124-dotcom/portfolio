@@ -437,6 +437,18 @@ function Experience() {
 
 // ===== CONTACT =====
 function Contact() {
+  // Ouvre WhatsApp avec le message du visiteur déjà écrit
+  const envoyer = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const texte =
+      `Bonjour Ulrich, je suis ${data.get('nom')} (${data.get('email')}).\n` +
+      `Sujet : ${data.get('sujet') || 'Non précisé'}\n\n` +
+      `${data.get('message')}`;
+    const url = `https://wa.me/2250761005948?text=${encodeURIComponent(texte)}`;
+    window.open(url, '_blank');
+  };
+
   return h(Reveal, { as: 'section', id: 'contact', className: 'grid lg:grid-cols-[1fr_1.4fr_1fr] gap-6 items-start px-6 lg:px-12 py-8' },
     h('div', null,
       h('span', { className: 'section-tag' }, '07 · CONTACT'),
@@ -445,16 +457,18 @@ function Contact() {
       ),
       h('p', { className: 'text-gray-400' }, 'Un projet en tête ? Écrivez-moi, je vous réponds rapidement.')
     ),
-    h('form', { className: 'bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-4', onSubmit: (e) => e.preventDefault() },
+
+    h('form', { className: 'bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-4', onSubmit: envoyer },
       h('div', { className: 'grid sm:grid-cols-2 gap-4' },
-        h('input', { type: 'text', placeholder: 'Votre nom', required: true, className: 'field' }),
-        h('input', { type: 'email', placeholder: 'Votre email', required: true, className: 'field' })
+        h('input', { type: 'text', name: 'nom', placeholder: 'Votre nom', required: true, className: 'field' }),
+        h('input', { type: 'email', name: 'email', placeholder: 'Votre email', required: true, className: 'field' })
       ),
-      h('input', { type: 'text', placeholder: 'Sujet', className: 'field' }),
-      h('textarea', { rows: 4, placeholder: 'Votre message', required: true, className: 'field resize-y' }),
+      h('input', { type: 'text', name: 'sujet', placeholder: 'Sujet', className: 'field' }),
+      h('textarea', { name: 'message', rows: 4, placeholder: 'Votre message', required: true, className: 'field resize-y' }),
       h('button', { type: 'submit', className: 'btn-gold self-start px-6 py-3' },
-        h('i', { className: 'fa-solid fa-paper-plane mr-2' }), 'Envoyer le message')
+        h('i', { className: 'fa-brands fa-whatsapp mr-2' }), 'Envoyer sur WhatsApp')
     ),
+
     h('div', { className: 'bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-6' },
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-envelope' })),
@@ -462,11 +476,11 @@ function Contact() {
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-brands fa-whatsapp' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0700615948'))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0761005948'))
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-location-dot' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire, Abidjan-Anono & Yamoussoukro"))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire"))
       )
     )
   );
