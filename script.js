@@ -16,14 +16,14 @@ const navLinks = [
 
 // level : pourcentage de 0 à 100
 const skills = [
-  { name: 'HTML5',      level: 75, icon: 'fa-brands fa-html5',        color: '#e34f26' },
+  { name: 'HTML5',      level: 65, icon: 'fa-brands fa-html5',        color: '#e34f26' },
   { name: 'CSS3',       level: 35, icon: 'fa-brands fa-css3-alt',     color: '#1572b6' },
   { name: 'JavaScript', level: 25, icon: 'fa-brands fa-js',           color: '#f7df1e' },
   { name: 'TypeScript', level: 5, icon: 'fa-solid fa-code',          color: '#3178c6' },
   { name: 'React',      level: 15, icon: 'fa-brands fa-react',        color: '#61dafb' },
   { name: 'Tailwind',   level: 20, icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
-  { name: 'Git',        level: 80, icon: 'fa-brands fa-git-alt',      color: '#f05033' },
-  { name: 'Kotlin',     level: 40, icon: 'fa-brands fa-android',      color: '#a97bff' },
+  { name: 'Git',        level: 50, icon: 'fa-brands fa-git-alt',      color: '#f05033' },
+  { name: 'Kotlin',     level: 0, icon: 'fa-brands fa-android',      color: '#a97bff' },
   { name: 'PHP',        level: 25, icon: 'fa-brands fa-php',          color: '#777bb4' },
   { name: 'Figma',      level: 5, icon: 'fa-brands fa-figma',        color: '#f24e1e' }
 ];
@@ -68,10 +68,12 @@ const projects = [
 ];
 
 const affiches = [
-  { src: 'LUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour ESLYAMEA' },
-  { src: 'CONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour BONTE" },
-  { src: 'NOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour l'entreprise NELLY" },
-  { src: 'MATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte' }
+  { src: 'LUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour un commerce en ligne' },
+  { src: 'CONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour un commerce en ligne" },
+  { src: 'NOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
+  { src: 'MATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
+  { src: '2.png', title: 'Affiche promotionnelle 05', desc: 'Fait pour un évènement'},
+  { src: 'Gloss à lèvres traitant et hydratant qui donne de belles lèvres roses. Un mélange d’aloe vera et d’arômes fruités et floraux pour des lèvres douces et éclatantes. - Copie.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
 ];
 
 const experiences = [
