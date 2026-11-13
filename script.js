@@ -22,6 +22,7 @@ const skills = [
   { name: 'React',      icon: 'fa-brands fa-react',        color: '#61dafb' },
   { name: 'Angular',    icon: 'fa-brands fa-angular',      color: '#dd0031' },
   { name: 'Tailwind',   img: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
+  { name: 'MySQL', icon: 'fa-solid fa-database', color: '#4479A1' },
   { name: 'Git',        icon: 'fa-brands fa-git-alt',      color: '#f05033' },
   { name: 'Docker',     icon: 'fa-brands fa-docker',       color: '#2496ed' },
   { name: 'Kotlin',     icon: 'fa-brands fa-android',      color: '#a97bff' },
@@ -70,10 +71,10 @@ const projects = [
 ];
 
 const affiches = [
-  { src: 'LUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour un commerce en ligne' },
-  { src: 'CONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour un commerce en ligne" },
-  { src: 'NOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
-  { src: 'MATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
+  { src: 'lUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour un commerce en ligne' },
+  { src: 'cONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour un commerce en ligne" },
+  { src: 'nOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
+  { src: 'mATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
   { src: '2.png', title: 'Affiche promotionnelle 05', desc: 'Fait pour un évènement'},
   { src: 'gloss-lèvres.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
 ];
@@ -201,7 +202,7 @@ function Hero() {
         h('div', { className: 'hero-ring' }),
         h('div', { className: 'hero-ring hero-ring-2' }),
         h('div', { className: 'float relative w-full h-full rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
-          h('img', { src: 'WhatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Ulrich Koné Gbah', className: 'w-full h-full object-cover' }) 
+          h('img', { src: 'whatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Ulrich Koné Gbah', className: 'w-full h-full object-cover' }) 
         )
       ),
       h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 rounded-xl px-6 py-4 text-center' },
@@ -212,23 +213,40 @@ function Hero() {
     )
   );
 }
-
 // ===== À PROPOS =====
 function About() {
-  return h('div', { id: 'apropos', className: 'card bg-dark-card border border-dark-border rounded-2xl p-8' },
+  const licences = [
+    { annee: '2026 - En cours', titre: 'Licence 3 professionnelle en Génie Réseaux Logiciel', lieu: "Pigier Côte d'Ivoire, Antenne Plateau" },
+    { annee: '2024 – 2025', titre: 'Licence 2 professionnelle en Génie Réseaux Logiciel', lieu: "Pigier Côte d'Ivoire, Antenne Yamoussoukro" },
+    { annee: '2023 – 2024', titre: 'Licence 1 professionnelle en Génie Réseaux Logiciel', lieu: "Pigier Côte d'Ivoire, Antenne Yamoussoukro" }
+  ];
+
+  return h('div', { id: 'apropos', className: 'card bg-dark-card border border-dark-border rounded-2xl p-6 flex flex-col' },
     h('span', { className: 'section-tag' }, '01 · À PROPOS DE MOI'),
-    h('h2', { className: 'text-3xl font-bold leading-snug mb-4' },
-      'Des solutions', h('br'), 'avec du code et ', h('span', { className: 'text-gold' }, 'de la créativité')
+    h('h2', { className: 'text-xl font-bold leading-snug mb-3' },
+      'Développeur ', h('span', { className: 'text-gold' }, 'web & mobile')),
+    h('p', { className: 'text-gray-400 text-sm leading-relaxed' },
+      "Étudiant en Licence 3 en informatique, passionné par le développement web, le design et la conception d'interfaces numériques."),
+
+    h('h3', { className: 'text-xs uppercase tracking-wider text-gold mt-5 mb-3' }, 'Parcours'),
+    h('ul', { className: 'relative border-l border-gold/30 ml-1.5 space-y-3' },
+      licences.map((l) =>
+        h('li', { key: l.annee, className: 'relative pl-5 text-sm' },
+          // Cercle doré devant chaque année
+          h('span', { className: 'absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-gold shadow-[0_0_8px_rgba(245,197,66,0.6)]' }),
+          h('span', { className: 'text-gold font-semibold text-xs' }, l.annee),
+          h('span', { className: 'block text-white' }, l.titre),
+          h('span', { className: 'block text-gray-500 text-xs' }, l.lieu)
+        )
+      )
     ),
-    h('p', { className: 'text-gray-400 mb-6' },
-      'Étudiant en Licence 3 Application Development, je me passionne pour le développement web et mobile. J\'aime transformer une idée en produit concret, propre et maintenable.'
-    ),
-    h('ul', { className: 'text-gray-400 space-y-2 mb-8' },
-      h('li', null, h('i', { className: 'fa-solid fa-star text-gold mr-2 text-xs' }), 'Résolution de problèmes'),
-      h('li', null, h('i', { className: 'fa-solid fa-star text-gold mr-2 text-xs' }), 'Code propre et maintenable'),
-      h('li', null, h('i', { className: 'fa-solid fa-star text-gold mr-2 text-xs' }), "Attention à la performance et à l'UX")
-    ),
-    h('a', { href: 'CV_Kone_Gbah_Ulrich_Paul_David.pdf', className: 'btn-outline px-6 py-3' }, h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
+
+    h('a', {
+        href: 'CV_Kone_Gbah_Ulrich_Paul_David.pdf',
+        download: true,
+        className: 'btn-outline px-5 py-2.5 mt-auto self-start text-sm'
+      },
+      h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
   );
 }
 
