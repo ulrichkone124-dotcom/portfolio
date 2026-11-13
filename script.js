@@ -119,17 +119,46 @@ function Reveal({ as: Tag = 'div', className = '', children, ...rest }) {
 
 // ===== NAVBAR =====
 function Navbar() {
-  return h('header', { className: 'sticky top-0 z-50 flex items-center justify-between gap-6 px-6 lg:px-12 py-4 bg-dark/85 backdrop-blur-md border-b border-dark-border fade-in' },
-    h('div', { className: 'flex items-center gap-2 font-bold tracking-wider' },
-      h('span', { className: 'w-9 h-9 grid place-items-center rounded-lg border-2 border-gold text-gold' }, 'U'),
-      h('span', null, 'ULRICH', h('span', { className: 'text-gold' }, '.DEV'))
-    ),
-    h('nav', { className: 'hidden md:flex gap-6 text-sm' },
-      navLinks.map((link, i) =>
-        h('a', { key: link.href, href: link.href, className: `nav-link ${i === 0 ? 'text-gold' : ''}` }, link.label)
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return h('header', { className: 'sticky top-0 z-50 bg-dark/85 backdrop-blur-md border-b border-dark-border fade-in' },
+    h('div', { className: 'flex items-center justify-between gap-6 px-6 lg:px-12 py-4' },
+      h('div', { className: 'flex items-center gap-2 font-bold tracking-wider' },
+        h('span', { className: 'w-9 h-9 grid place-items-center rounded-lg border-2 border-gold text-gold' }, 'U'),
+        h('span', null, 'ULRICH', h('span', { className: 'text-gold' }, '.DEV'))
+      ),
+      h('nav', { className: 'hidden md:flex gap-6 text-sm' },
+        navLinks.map((link, i) =>
+          h('a', { key: link.href, href: link.href, className: `nav-link ${i === 0 ? 'text-gold' : ''}` }, link.label)
+        )
+      ),
+      h('div', { className: 'flex items-center gap-3' },
+        h('a', { href: '#contact', className: 'btn-gold text-sm px-4 py-2 hidden sm:inline-block' }, 'Me contacter'),
+        h('button', {
+            className: 'md:hidden arrow-btn',
+            onClick: () => setOpen(!open),
+            'aria-label': 'Ouvrir le menu',
+            'aria-expanded': open
+          },
+          h('i', { className: open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars' })
+        )
       )
     ),
-    h('a', { href: '#contact', className: 'btn-gold text-sm px-4 py-2' }, 'Me contacter')
+
+    // Menu mobile : affiché seulement quand on clique sur le bouton
+    open && h('nav', { className: 'md:hidden flex flex-col px-6 pb-4 fade-in' },
+      navLinks.map((link) =>
+        h('a', {
+            key: link.href,
+            href: link.href,
+            onClick: close,
+            className: 'py-3 border-b border-dark-border text-gray-300 hover:text-gold transition'
+          },
+          link.label
+        )
+      )
+    )
   );
 }
 
@@ -142,7 +171,7 @@ function Hero() {
         'Disponible pour de nouvelles opportunités'
       ),
       h('p', { className: 'fade-in-up delay-1 text-gold font-semibold tracking-wide mb-2' },
-        'Je suis Kone Gbah Ulrich Paul David'
+        'Je suis Koné Gbah Ulrich Paul David'
       ),
       h('h1', { className: 'fade-in-up delay-1 text-4xl md:text-6xl font-bold leading-tight mb-5' },
         'Je construis des', h('br'), h('span', { className: 'text-gold' }, 'expériences web'), ' modernes'
@@ -164,13 +193,20 @@ function Hero() {
           h('i', { className: 'fa-solid fa-envelope' }))
       )
     ),
+
     h('div', { className: 'relative grid place-items-center fade-in-up delay-2' },
-      h('div', { className: 'float w-72 h-72 md:w-96 md:h-96 rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
-        h('img', { src: 'WhatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Kone Gbah Ulrich Paul David', className: 'w-full h-full object-cover' }),
+      // Wrapper de la photo : contient le halo, les anneaux et le cercle
+      h('div', { className: 'relative w-72 h-72 md:w-96 md:h-96' },
+        h('div', { className: 'hero-halo' }),
+        h('div', { className: 'hero-ring' }),
+        h('div', { className: 'hero-ring hero-ring-2' }),
+        h('div', { className: 'float relative w-full h-full rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
+          h('img', { src: 'WhatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Ulrich Koné Gbah', className: 'w-full h-full object-cover' }) 
+        )
       ),
       h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 rounded-xl px-6 py-4 text-center' },
-        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '3+'), h('small', { className: 'text-gray-400 text-xs' }, "Année d'études")),
-        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '1+'), h('small', { className: 'text-gray-400 text-xs' }, 'Projets réalisés')),
+        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '1+'), h('small', { className: 'text-gray-400 text-xs' }, "Année d'études")),
+        h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '3+'), h('small', { className: 'text-gray-400 text-xs' }, 'Projets réalisés')),
         h('div', { className: 'flex flex-col' }, h('strong', { className: 'text-gold text-xl' }, '100%'), h('small', { className: 'text-gray-400 text-xs' }, 'Motivé'))
       )
     )

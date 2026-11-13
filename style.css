@@ -283,3 +283,44 @@ html { scroll-behavior: smooth; }
 @media (max-width: 640px) {
   .stats-box { width: 100%; justify-content: space-around; }
 }
+
+/* ===== DÉCOR DERRIÈRE LA PHOTO ===== */
+.hero-halo {
+  position: absolute;
+  inset: -30%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 66, .28) 0%, rgba(245, 197, 66, .08) 40%, transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute;
+  inset: -10%;
+  border-radius: 50%;
+  border: 1px dashed rgba(245, 197, 66, .45);
+  animation: spin 40s linear infinite;
+  pointer-events: none;
+}
+.hero-ring-2 {
+  inset: -22%;
+  border: 1px solid rgba(245, 197, 66, .12);
+  animation-duration: 60s;
+  animation-direction: reverse;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Fond quadrillé très discret sur toute la page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Les ancres ne passent pas sous la barre de navigation */
+section[id], div[id] { scroll-margin-top: 90px; }
