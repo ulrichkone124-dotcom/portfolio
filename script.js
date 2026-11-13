@@ -537,7 +537,7 @@ function Contact() {
     {
       icon: 'fa-solid fa-location-dot',
       label: 'Localisation',
-      valeur: "Côte d'Ivoire",
+      valeur: "Côte d'Ivoire, Abidjan-Anono & Yamoussoukro",
       href: null
     }
   ];
