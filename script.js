@@ -81,7 +81,7 @@ const affiches = [
 
 const experiences = [
   { icon: 'fa-solid fa-graduation-cap', title: "Licence 3 Développeur d'Applications", date: "2026 – Aujourd'hui", text: 'Mobile, réseaux, développement web et DevOps.' },
-  { icon: 'fa-solid fa-laptop-code', title: 'Formation en développement web', date: "2023 – Aujourd'hui", text: 'HTML, CSS, JavaScript, PHP et bases de données.' },
+  { icon: 'fa-solid fa-laptop-code', title: 'Formation en développement web', date: "Juin 2026 – Aujourd'hui", text: 'HTML, CSS, JavaScript, PHP et bases de données.' },
   { icon: 'fa-solid fa-book-open', title: 'Autodidacte', date: 'En continu', text: 'Apprentissage des frameworks et des API.' }
 ];
 
