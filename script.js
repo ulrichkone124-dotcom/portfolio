@@ -515,7 +515,7 @@ function Contact() {
       `Bonjour Ulrich, je suis ${data.get('nom')} (${data.get('email')}).\n` +
       `Sujet : ${data.get('sujet') || 'Non précisé'}\n\n` +
       `${data.get('message')}`;
-    const url = `https://wa.me/2250761005948?text=${encodeURIComponent(texte)}`;
+    const url = `https://wa.me/2250700615948?text=${encodeURIComponent(texte)}`;
     window.open(url, '_blank');
   };
 
@@ -531,7 +531,7 @@ function Contact() {
       icon: 'fa-brands fa-whatsapp',
       label: 'WhatsApp',
       valeur: '0761005948',
-      href: 'https://wa.me/2250761005948',
+      href: 'https://wa.me/2250700615948',
       externe: true
     },
     {
