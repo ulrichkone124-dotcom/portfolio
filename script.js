@@ -21,13 +21,13 @@ const skills = [
   { name: 'TypeScript', icon: 'fa-solid fa-code',          color: '#3178c6' },
   { name: 'React',      icon: 'fa-brands fa-react',        color: '#61dafb' },
   { name: 'Angular',    icon: 'fa-brands fa-angular',      color: '#dd0031' },
-  { name: 'Tailwind',   icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
+  { name: 'Tailwind',   img: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
   { name: 'Git',        icon: 'fa-brands fa-git-alt',      color: '#f05033' },
   { name: 'Docker',     icon: 'fa-brands fa-docker',       color: '#2496ed' },
   { name: 'Kotlin',     icon: 'fa-brands fa-android',      color: '#a97bff' },
   { name: 'PHP',        icon: 'fa-brands fa-php',          color: '#777bb4' },
   { name: 'Figma',      icon: 'fa-brands fa-figma',        color: '#f24e1e' },
-  { name: 'Canva',      icon: 'fa-brands fa-canva',        color: '#00c4cc' }
+  { name: 'Canva', letter: 'C', color: '#00C4CC'  } 
 ];
 
 const services = [
@@ -75,7 +75,7 @@ const affiches = [
   { src: 'NOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
   { src: 'MATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
   { src: '2.png', title: 'Affiche promotionnelle 05', desc: 'Fait pour un évènement'},
-  { src: 'Gloss à lèvres traitant et hydratant qui donne de belles lèvres roses. Un mélange d’aloe vera et d’arômes fruités et floraux pour des lèvres douces et éclatantes. - Copie.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
+  { src: 'gloss-lèvres.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
 ];
 
 const experiences = [
@@ -231,28 +231,46 @@ function About() {
     h('a', { href: 'CV_Kone_Gbah_Ulrich_Paul_David.pdf', className: 'btn-outline px-6 py-3' }, h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
   );
 }
+
 // ===== COMPÉTENCES =====
 function Skills() {
+  const renderIcon = (skill) => {
+    if (skill.img) {
+      return h('img', { src: skill.img, alt: skill.name, className: 'w-6 h-6 object-contain' });
+    }
+    if (skill.letter) {
+      return h('span', {
+          className: 'w-6 h-6 grid place-items-center rounded font-bold text-sm text-white',
+          style: { backgroundColor: skill.color }
+        }, skill.letter);
+    }
+    return h('i', { className: `${skill.icon} text-xl`, style: { color: skill.color } });
+  };
+
   return h('div', { id: 'competences', className: 'card bg-dark-card border border-dark-border rounded-2xl p-6 flex flex-col' },
     h('span', { className: 'section-tag' }, '02 · COMPÉTENCES'),
-    h('h2', { className: 'text-2xl font-bold mb-5' }, 'Skills & ', h('span', { className: 'text-gold' }, 'Stack')),
-    h('div', { className: 'grid grid-cols-4 sm:grid-cols-5 gap-2.5 flex-1 content-start' },
+    h('h2', { className: 'text-xl font-bold mb-4' }, 'Technologies & ', h('span', { className: 'text-gold' }, 'Outils')),
+
+    // auto-rows-fr : chaque ligne prend la même hauteur et la grille remplit la carte
+    h('div', { className: 'grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 flex-1 auto-rows-fr' },
       skills.map((skill) =>
         h('div', {
             key: skill.name,
-            className: 'flex flex-col items-center justify-center gap-1.5 py-3 px-1 bg-dark-soft border border-dark-border rounded-lg hover:-translate-y-1 hover:border-gold transition duration-300'
+            className: 'flex items-center gap-3 px-3 py-3 bg-dark-soft border border-dark-border rounded-lg hover:border-gold transition duration-300'
           },
-          h('i', { className: `${skill.icon} text-2xl`, style: { color: skill.color } }),
-          h('span', { className: 'text-[11px] text-gray-400 text-center leading-tight' }, skill.name)
+          renderIcon(skill),
+          h('span', { className: 'text-xs text-gray-400 leading-tight truncate' }, skill.name)
         )
       )
     ),
-    h('p', { className: 'flex items-center gap-2 text-xs text-gray-400 mt-5' },
+
+    h('p', { className: 'flex items-center gap-2 text-xs text-gray-400 mt-4' },
       h('i', { className: 'fa-solid fa-bolt text-gold' }),
-      'Toujours en apprentissage de ses technologies'
+      'Toujours en apprentissage de ses technologies pour ameliorer mon niveau'
     )
   );
 }
+
 // ===== SERVICES =====
 function Services() {
   return h(Reveal, { as: 'section', id: 'services', className: 'px-6 lg:px-12 py-8' },
