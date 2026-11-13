@@ -14,18 +14,20 @@ const navLinks = [
   { href: '#contact', label: 'Contact' }
 ];
 
-// level : pourcentage de 0 à 100
 const skills = [
-  { name: 'HTML5',      level: 65, icon: 'fa-brands fa-html5',        color: '#e34f26' },
-  { name: 'CSS3',       level: 35, icon: 'fa-brands fa-css3-alt',     color: '#1572b6' },
-  { name: 'JavaScript', level: 25, icon: 'fa-brands fa-js',           color: '#f7df1e' },
-  { name: 'TypeScript', level: 5, icon: 'fa-solid fa-code',          color: '#3178c6' },
-  { name: 'React',      level: 15, icon: 'fa-brands fa-react',        color: '#61dafb' },
-  { name: 'Tailwind',   level: 20, icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
-  { name: 'Git',        level: 50, icon: 'fa-brands fa-git-alt',      color: '#f05033' },
-  { name: 'Kotlin',     level: 0, icon: 'fa-brands fa-android',      color: '#a97bff' },
-  { name: 'PHP',        level: 25, icon: 'fa-brands fa-php',          color: '#777bb4' },
-  { name: 'Figma',      level: 5, icon: 'fa-brands fa-figma',        color: '#f24e1e' }
+  { name: 'HTML5',      icon: 'fa-brands fa-html5',        color: '#e34f26' },
+  { name: 'CSS3',       icon: 'fa-brands fa-css3-alt',     color: '#1572b6' },
+  { name: 'JavaScript', icon: 'fa-brands fa-js',           color: '#f7df1e' },
+  { name: 'TypeScript', icon: 'fa-solid fa-code',          color: '#3178c6' },
+  { name: 'React',      icon: 'fa-brands fa-react',        color: '#61dafb' },
+  { name: 'Angular',    icon: 'fa-brands fa-angular',      color: '#dd0031' },
+  { name: 'Tailwind',   icon: 'fa-brands fa-tailwind-css', color: '#38bdf8' },
+  { name: 'Git',        icon: 'fa-brands fa-git-alt',      color: '#f05033' },
+  { name: 'Docker',     icon: 'fa-brands fa-docker',       color: '#2496ed' },
+  { name: 'Kotlin',     icon: 'fa-brands fa-android',      color: '#a97bff' },
+  { name: 'PHP',        icon: 'fa-brands fa-php',          color: '#777bb4' },
+  { name: 'Figma',      icon: 'fa-brands fa-figma',        color: '#f24e1e' },
+  { name: 'Canva',      icon: 'fa-brands fa-canva',        color: '#00c4cc' }
 ];
 
 const services = [
@@ -40,7 +42,7 @@ const services = [
 const projects = [
   {
     title: 'Portfolio Cédric',
-    description: 'Description courte de ton projet : le problème résolu et ce que tu as réalisé.',
+    description: "Realisation de son portfolio pour montrer à ses futurs collaborateurs ce qu'il a realisé comme projet, sa formation etc...",
     tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind', 'React'],
     image: 'capture-cedric.png',
     icon: 'fa-solid fa-laptop-code',
@@ -193,34 +195,28 @@ function About() {
     h('a', { href: 'CV_Kone_Gbah_Ulrich_Paul_David.pdf', className: 'btn-outline px-6 py-3' }, h('i', { className: 'fa-solid fa-download mr-2' }), 'Télécharger mon CV')
   );
 }
-
 // ===== COMPÉTENCES =====
-function SkillBar({ skill }) {
-  const [ref, inView] = useInView(0.3);
-  return h('div', { ref, className: `skill-item ${inView ? 'in-view' : ''}` },
-    h('div', { className: 'skill-head' },
-      h('span', { className: 'skill-name' },
-        h('i', { className: skill.icon, style: { color: skill.color } }),
-        skill.name
-      ),
-      h('span', { className: 'skill-percent' }, skill.level + '%')
-    ),
-    h('div', { className: 'skill-track' },
-      h('div', { className: 'skill-fill', style: { '--level': skill.level + '%' } })
-    )
-  );
-}
-
 function Skills() {
-  return h('div', { id: 'competences', className: 'card bg-dark-card border border-dark-border rounded-2xl p-8' },
+  return h('div', { id: 'competences', className: 'card bg-dark-card border border-dark-border rounded-2xl p-6 flex flex-col' },
     h('span', { className: 'section-tag' }, '02 · COMPÉTENCES'),
-    h('h2', { className: 'text-2xl font-bold mb-6' }, 'Mon ', h('span', { className: 'text-gold' }, 'niveau'), ' par technologie'),
-    h('div', { className: 'grid sm:grid-cols-2 gap-x-6 gap-y-5' },
-      skills.map((skill) => h(SkillBar, { key: skill.name, skill }))
+    h('h2', { className: 'text-2xl font-bold mb-5' }, 'Skills & ', h('span', { className: 'text-gold' }, 'Stack')),
+    h('div', { className: 'grid grid-cols-4 sm:grid-cols-5 gap-2.5 flex-1 content-start' },
+      skills.map((skill) =>
+        h('div', {
+            key: skill.name,
+            className: 'flex flex-col items-center justify-center gap-1.5 py-3 px-1 bg-dark-soft border border-dark-border rounded-lg hover:-translate-y-1 hover:border-gold transition duration-300'
+          },
+          h('i', { className: `${skill.icon} text-2xl`, style: { color: skill.color } }),
+          h('span', { className: 'text-[11px] text-gray-400 text-center leading-tight' }, skill.name)
+        )
+      )
+    ),
+    h('p', { className: 'flex items-center gap-2 text-xs text-gray-400 mt-5' },
+      h('i', { className: 'fa-solid fa-bolt text-gold' }),
+      'Toujours en apprentissage de ses technologies'
     )
   );
 }
-
 // ===== SERVICES =====
 function Services() {
   return h(Reveal, { as: 'section', id: 'services', className: 'px-6 lg:px-12 py-8' },
