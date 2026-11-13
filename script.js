@@ -187,7 +187,7 @@ function Hero() {
         h('span', null, 'Suivez-moi'),
         h('a', { href: 'https://github.com/ulrichkone124-dotcom', target: '_blank', rel: 'noopener', className: 'social-btn', 'aria-label': 'GitHub' },
           h('i', { className: 'fa-brands fa-github' })),
-        h('a', { href: '#', className: 'social-btn', 'aria-label': 'LinkedIn' },
+        h('a', { href: 'https://www.linkedin.com/in/kone-gbah-ulrich-paul-david-138b083a1?', className: 'social-btn', 'aria-label': 'LinkedIn' },
           h('i', { className: 'fa-brands fa-linkedin-in' })),
         h('a', { href: 'mailto:ulrichkone124@gmail.com', className: 'social-btn', 'aria-label': 'Email' },
           h('i', { className: 'fa-solid fa-envelope' }))
