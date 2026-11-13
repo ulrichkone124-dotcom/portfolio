@@ -515,9 +515,32 @@ function Contact() {
       `Bonjour Ulrich, je suis ${data.get('nom')} (${data.get('email')}).\n` +
       `Sujet : ${data.get('sujet') || 'Non précisé'}\n\n` +
       `${data.get('message')}`;
-    const url = `https://wa.me/2250700615948?text=${encodeURIComponent(texte)}`;
+    const url = `https://wa.me/2250761005948?text=${encodeURIComponent(texte)}`;
     window.open(url, '_blank');
   };
+
+  // Coordonnées cliquables : email (mailto) et WhatsApp (wa.me)
+  const coordonnees = [
+    {
+      icon: 'fa-solid fa-envelope',
+      label: 'Email',
+      valeur: 'ulrichkone124@gmail.com',
+      href: 'mailto:ulrichkone124@gmail.com'
+    },
+    {
+      icon: 'fa-brands fa-whatsapp',
+      label: 'WhatsApp',
+      valeur: '0761005948',
+      href: 'https://wa.me/2250761005948',
+      externe: true
+    },
+    {
+      icon: 'fa-solid fa-location-dot',
+      label: 'Localisation',
+      valeur: "Côte d'Ivoire",
+      href: null
+    }
+  ];
 
   return h(Reveal, { as: 'section', id: 'contact', className: 'grid lg:grid-cols-[1fr_1.4fr_1fr] gap-6 items-start px-6 lg:px-12 py-8' },
     h('div', null,
@@ -539,23 +562,35 @@ function Contact() {
         h('i', { className: 'fa-brands fa-whatsapp mr-2' }), 'Envoyer sur WhatsApp')
     ),
 
-    h('div', { className: 'bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-6' },
-      h('div', { className: 'flex gap-4 items-start' },
-        h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-envelope' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Email'), h('p', { className: 'text-sm' }, 'ulrichkone124@gmail.com'))
-      ),
-      h('div', { className: 'flex gap-4 items-start' },
-        h('span', { className: 'info-icon' }, h('i', { className: 'fa-brands fa-whatsapp' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0700615948'))
-      ),
-      h('div', { className: 'flex gap-4 items-start' },
-        h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-location-dot' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'Localisation'), h('p', { className: 'text-sm' }, "Côte d'Ivoire, Abidjan-Anono & Yamoussoukro"))
-      )
+    h('div', { className: 'bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-4' },
+      coordonnees.map((c) => {
+        const contenu = [
+          h('span', { key: 'icone', className: 'info-icon' }, h('i', { className: c.icon })),
+          h('div', { key: 'texte' },
+            h('small', { className: 'text-gray-400 text-xs' }, c.label),
+            h('p', { className: 'text-sm' }, c.valeur)
+          )
+        ];
+
+        // Sans lien (localisation) : simple bloc non cliquable
+        if (!c.href) {
+          return h('div', { key: c.label, className: 'flex gap-4 items-start p-3 -m-3' }, contenu);
+        }
+
+        // Avec lien : toute la ligne est cliquable
+        return h('a', {
+            key: c.label,
+            href: c.href,
+            target: c.externe ? '_blank' : undefined,
+            rel: c.externe ? 'noopener' : undefined,
+            className: 'flex gap-4 items-start p-3 -m-3 rounded-xl hover:bg-dark-soft hover:text-gold transition duration-300'
+          },
+          contenu
+        );
+      })
     )
   );
 }
-
 // ===== FOOTER =====
 function Footer() {
   return h('footer', { className: 'flex justify-between px-6 lg:px-12 py-6 mt-8 border-t border-dark-border text-gray-400 text-sm' },
