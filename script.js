@@ -71,12 +71,12 @@ const projects = [
 ];
 
 const affiches = [
-  { src: 'lUNDI 22DECEMBRE 2025.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour un commerce en ligne' },
-  { src: 'cONFECTION CHEZ BONTE1.png', title: 'Affiche promotionnelle 02', desc: "Fait pour un commerce en ligne" },
-  { src: 'nOS SERVICES.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
-  { src: 'mATCHDAY.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
-  { src: '2.png', title: 'Affiche promotionnelle 05', desc: 'Fait pour un évènement'},
-  { src: 'gloss-lèvres.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
+  { src: 'affiche-1.png', title: 'Affiche promotionnelle 01', desc: 'Fait pour un commerce en ligne' },
+  { src: 'affiche-2.png', title: 'Affiche promotionnelle 02', desc: "Fait pour un commerce en ligne" },
+  { src: 'affiche-3.png', title: 'Affiche promotionnelle 03', desc: "Fait pour un commerce en ligne" },
+  { src: 'affiche-4.png', title: 'Affiche promotionnelle 04', desc: 'Fait pour mon propre compte'},
+  { src: 'affiche-5.png', title: 'Affiche promotionnelle 05', desc: 'Fait pour un évènement'},
+  { src: 'affiche-6.png', title: 'Affiche promotionnelle 06', desc: 'Fait pour un commerce en ligne'}
 ];
 
 const experiences = [
