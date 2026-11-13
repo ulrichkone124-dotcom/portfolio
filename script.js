@@ -202,7 +202,7 @@ function Hero() {
         h('div', { className: 'hero-ring' }),
         h('div', { className: 'hero-ring hero-ring-2' }),
         h('div', { className: 'float relative w-full h-full rounded-full border-2 border-gold bg-dark-soft grid place-items-center overflow-hidden text-gray-400 glow' },
-          h('img', { src: 'whatsApp Image 2026-10-08 at 08.55.27-Photoroom.png', alt: 'Ulrich Koné Gbah', className: 'w-full h-full object-cover' }) 
+          h('img', { src: 'photo.png', alt: 'Ulrich Koné Gbah', className: 'w-full h-full object-cover' }) 
         )
       ),
       h('div', { className: 'stats-box flex gap-6 mt-6 lg:mt-0 lg:absolute lg:-bottom-5 rounded-xl px-6 py-4 text-center' },
