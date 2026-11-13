@@ -515,7 +515,7 @@ function Contact() {
       `Bonjour Ulrich, je suis ${data.get('nom')} (${data.get('email')}).\n` +
       `Sujet : ${data.get('sujet') || 'Non précisé'}\n\n` +
       `${data.get('message')}`;
-    const url = `https://wa.me/2250761005948?text=${encodeURIComponent(texte)}`;
+    const url = `https://wa.me/2250700615948?text=${encodeURIComponent(texte)}`;
     window.open(url, '_blank');
   };
 
@@ -546,7 +546,7 @@ function Contact() {
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-brands fa-whatsapp' })),
-        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0761005948'))
+        h('div', null, h('small', { className: 'text-gray-400 text-xs' }, 'WhatsApp'), h('p', { className: 'text-sm' }, '0700615948'))
       ),
       h('div', { className: 'flex gap-4 items-start' },
         h('span', { className: 'info-icon' }, h('i', { className: 'fa-solid fa-location-dot' })),
@@ -559,7 +559,7 @@ function Contact() {
 // ===== FOOTER =====
 function Footer() {
   return h('footer', { className: 'flex justify-between px-6 lg:px-12 py-6 mt-8 border-t border-dark-border text-gray-400 text-sm' },
-    h('span', null, '© 2026 Ulrich Koné Gbah. Tous droits réservés.'),
+    h('span', null, '© 2026 UlrichDev. Tous droits réservés.'),
     h('a', { href: '#accueil', className: 'text-gold' }, 'Retour en haut ', h('i', { className: 'fa-solid fa-arrow-up ml-1' }))
   );
 }
