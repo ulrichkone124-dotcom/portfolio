@@ -53,7 +53,7 @@ const projects = [
   {
     title: 'Projet 02',
     description: 'Description courte de ton projet : le problème résolu et ce que tu as réalisé.',
-    tags: ['React', 'Tailwind'],
+    tags: ['', ''],
     image: '',
     icon: 'fa-brands fa-react',
     github: 'https://github.com/ulrichkone124-dotcom/',
@@ -62,7 +62,7 @@ const projects = [
   {
     title: 'Projet 03',
     description: 'Description courte de ton projet : le problème résolu et ce que tu as réalisé.',
-    tags: ['Kotlin', 'Android'],
+    tags: ['', ''],
     image: '',
     icon: 'fa-brands fa-android',
     github: 'https://github.com/ulrichkone124-dotcom/',
