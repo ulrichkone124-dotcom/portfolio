@@ -530,7 +530,7 @@ function Contact() {
     {
       icon: 'fa-brands fa-whatsapp',
       label: 'WhatsApp',
-      valeur: '0761005948',
+      valeur: '0700615948',
       href: 'https://wa.me/2250700615948',
       externe: true
     },
